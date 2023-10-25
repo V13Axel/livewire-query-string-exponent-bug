@@ -12,6 +12,10 @@ class Example extends Component
 
     public function mount()
     {
+        if (!$this->example) {
+            return $this->redirect('/?example=123e5');
+        }
+
         dd(
             "Livewire: " . $this->example,
             "Request: " .request('example')
